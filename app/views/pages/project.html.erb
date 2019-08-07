@@ -1,0 +1,89 @@
+<style>
+  .project-image{
+    margin: auto;
+    margin-top: 3%;
+    border-radius: 10px 10px;
+  }
+</style>
+
+<h2 class="h1-responsive font-weight-bold text-center my-5">Our Projects</h2>
+
+
+<div class="container">
+
+  <% for i in (0...@projects.length).step(2) %>
+
+    <div class="row text-center" style="padding-bottom: 20px;">
+
+      <% for j in 0...2 %>
+
+        <% if @projects[i + j] and @projects[i+j].image %>
+
+          <div class="col" style="margin-left:2%;padding-bottom: 10%">
+            <!--Featured image-->
+            <div class="view overlay rounded">
+              <%= image_tag @projects[i+j].image.variant(resize: "512x228"), class: ' project-image' %>
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <!--Excerpt-->
+            <div class="card-body pb-0">
+              <h4 class="font-weight-bold my-3"><%= @projects[i+j].title %></h4>
+              <p class="grey-text"><%= @projects[i+j].description %>
+              </p>
+              <a class="btn btn-indigo btn-sm modal-open" data-toggle="modal" data-target="#myModal-<%=@projects[i+j].id%>"><i class="fas fa-clone left"></i> View project</a>
+            </div>
+          </div>
+
+
+
+          <div class="modal fade" id="myModal-<%=@projects[i+j].id%>" role="dialog" aria-modal="true">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><%= @projects[i+j].title %></h4>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <!-- <p>Some text in the modal.</p> -->
+                    <%= image_tag @projects[i+j].image.variant(resize: "768x432"), class: ' img-fluid', style:'border-radius: 1em !important; padding-bottom : 10px;' %>
+
+                    <hr>
+                    <div class="col font-weight-bold" style="font-size: 20px"> <p><%= @projects[i+j].description %></p> </div>
+                      <div class="row" style="margin-top: 10%">
+                        <div class="col text-muted"><h6>Date</h6></div>
+                        <div class="col text-muted"><p><%= @projects[i+j].time.strftime("%d/%m/%Y") %></p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-muted"><h6>Time</h6></div>
+                        <div class="col text-muted"><p><%= @projects[i+j].time.strftime("%H %p") %></p></div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-muted"><h6>Participants</h6></div>
+                        <div class="col text-muted"><p><%= @projects[i+j].nop %></p></div>
+                      </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" style="color: white; margin: 10px;">Close</button>
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+        <% end %>
+
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+<script>
+
+</script>

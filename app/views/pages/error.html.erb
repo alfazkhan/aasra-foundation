@@ -1,0 +1,15 @@
+<% if @volunteer.errors.any? %>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <ul>
+          <% @volunteer.errors.full_messages.each do |msg| %>
+            <li class="text-justify"><%= msg %></li>
+          <%end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<%end %>
+

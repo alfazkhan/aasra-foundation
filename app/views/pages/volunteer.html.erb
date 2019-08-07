@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Our Volunteers</h2>
+
+  <!-- Section: Team v.3 -->
+  <section class="team-section my-5">
+
+    <% for i in (0...@volunteers.length).step(3) %>
+
+      <!-- Grid row-->
+      <div class="row">
+
+        <% for j in 0...3 %>
+
+
+          <% if @volunteers[i + j] %>
+
+            <div class="col text-center js-cards card" style="padding: 20px; margin: 10px;" id="card">
+              <div class="avatar mb-md-0 mb-4 mx-4">
+                <%= image_tag @volunteers[i+j].image.variant(resize: "200x200"), class: 'rounded z-depth-1', style:"border-radius : 50% !important; border: 5px solid green; padding: 10px !important;", height:"200px;", width:"200px;" %>
+              </div>
+              <div class="mx-4">
+                <h4 class="font-weight-bold mb-3"><%= @volunteers[i+j].first_name %></h4>
+                <h6 class="font-weight-bold grey-text mb-3"><%= @volunteers[i+j].profession %></h6>
+                <p class="grey-text"><%= @volunteers[i+j].description %></p>
+                <!-- Facebook-->
+                <a class="p-2 fa-lg fb-ic">
+                  <i class="fab fa-facebook-f"> </i>
+                </a>
+                <!--YouTube -->
+                <a class="p-2 fa-lg yt-ic">
+                  <i class="fab fa-youtube"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="p-2 fa-lg ins-ic">
+                  <i class="fab fa-instagram"> </i>
+                </a>
+              </div>
+            </div>
+          <% end %>
+
+
+        <% end %>
+      </div>
+    <% end %>
+    <!-- Grid row-->
+  </section>
+</div>
+
+
+
+<!-- Section: Team v.3 -->
+<script type="text/javascript">
+
+    if(screen.width <= 768)
+    {
+        let cards = document.getElementsByClassName('js-cards');
+        for(let i=0; i< cards.length ; i++){
+            cards[i].classList.remove('col');
+            cards[i].classList.add('col-xs-12')
+        }
+    }
+
+
+  
+</script>

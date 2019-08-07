@@ -1,0 +1,15 @@
+current directory: /home/alfaaz/Desktop/Alfaaz/asfdn/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/local/rvm/rubies/ruby-2.6.3/bin/ruby -I /usr/local/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0 -r ./siteconf20190807-2240-1tlqk68.rb extconf.rb
+creating Makefile
+
+current directory: /home/alfaaz/Desktop/Alfaaz/asfdn/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/alfaaz/Desktop/Alfaaz/asfdn/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/alfaaz/Desktop/Alfaaz/asfdn/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20190807-2240-gj6yj2/skiptrace/internal

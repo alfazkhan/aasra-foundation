@@ -1,0 +1,257 @@
+<style>
+
+  .slideshow-image{
+    width: 100% !important;
+    height: 900px !important;
+  }
+
+  @media screen and (max-width: 425px) {
+    .slideshow-image{
+      height: 350px !important;
+    }
+  }
+</style>
+        <div>
+          <div id="carouselExampleIndicators" class="carousel slide pointer-event" data-ride="carousel" data-pause="false" data-interval="3000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <%if @images.first%>
+                  <%= image_tag(@images[0].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                  </div>
+                <%end%>
+
+                <%if @images.length > 1%>
+                  <% for i in 1...@images.length%>
+                    <div class="carousel-item">
+                      <%= image_tag(@images[i].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                    </div>
+                  <%end%>
+                <%end%>
+                </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+        </div>
+
+<hr>
+
+
+<div class="container">
+<section class="my-5">
+  <h2 class="h1-responsive font-weight-bold text-center my-5">About Us</h2>
+  <!-- Section description -->
+  <p class="lead grey-text text-center w-responsive mx-auto mb-5">We are established on <b>August 4, 2016</b> in <b>Jaipur as a</b> non-profit organization under Govt. of Rajasthan. For the wellbeing of children and elderly, we are enacting various dynamic social movements.</p>
+  <p class="lead grey-text text-center w-responsive mx-auto mb-5">An initiative by multi-issue think tank who had convened to enact towards individual rights and empowerment.</p>
+  <div class="row">
+    <div class="col-md-4 mb-md-0 mb-5">
+        <div class="row" >
+            <div class="col-lg-2 col-md-3 col-2">
+              <i class="fas fa-cogs pink-text fa-2x"></i>
+              <!-- <img src="../../assets/images/vision.png" alt="" height="50px" width="50px"> -->
+            </div>
+
+            <div class="col-lg-10 col-md-9 col-10">
+              <h4 class="font-weight-bold">Our Vision</h4>
+              <p class="grey-text">Our vision is bringing together a sense of mutual respect for people. Thaht involves ensuring their fundamental...</p>
+              <a class="btn btn-primary btn-sm waves-effect waves-light" data-target="#exampleModalCenter1" data-toggle="modal">Learn more</a>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Our Vision</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Our vision is bringing together a sense of mutual respect for people. That involves ensuring their fundamental rights for them. We know this is going to be a long journey as we’ve started with limited resources but unlimited will power to bring change. To achieve this sense of mutual respect, we have to work on these three ethics.
+                      </p>
+                      <ul>
+                        <li><b>Empowerment</b></li>
+                        <p>Empowerment is a multi-dimensional social process that helps people gain control over their lives. It is multi-dimensional because works on different dimensions of an individual such as sociological, psychological, economic and other such dimensions. Social because it gives us a sense of involvement in society, being a social animal. It’s a process that fosters power in people, so that they can use it in their own life, community and society.
+                        </p>
+                        <li><b>Justice</b></li>
+                        <p>Justice, a basic human right. We don’t expect people to fight for it. To live a life that’s fulfilling, it’s necessary to have a sense of belief in our judiciary system and that supports respect in society. Human behavior is a realization of some natural laws, Justice is one of them. We believe justice can exist only within the parameters of equality. To achieve our vision and to bring a sense of security, we have to systematize social and economic inequalities.</p>
+                        <li><b>Welfare</b></li>
+                        <p>Public aid for children and elderly in need to support their basic necessities like health, education, habitat, rehabilitation, skill development and financial support. We will make efforts to fulfill these basic but important needs for them. Mental wellbeing of a person affects one’s behavior towards society. Our aim is to help them live a better livelihood.
+                        </p>
+                      </ul>
+                    </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" style="color: #ffffff">Close</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+      </div>  
+    </div>
+    
+
+    
+    <div class="col-md-4 mb-md-0 mb-5">
+
+      
+      <div class="row" >
+
+        
+        <div class="col-lg-2 col-md-3 col-2">
+          <i class="fas fa-tachometer-alt purple-text fa-2x"></i>
+        </div>
+        
+
+        
+        <div class="col-lg-10 col-md-9 col-10">
+          <h4 class="font-weight-bold">Our Mission</h4>
+          <p class="grey-text">Our mission is to bring awareness among people, a sense of social consciousness. Consciousness...</p>
+          <!-- Button trigger modal -->
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">Learn More</button> -->
+          <a class="btn btn-pink btn-sm waves-effect waves-light" data-target="#exampleModalCenter2" data-toggle="modal">Learn more</a>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Our Mission</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <p>Our mission is to bring awareness among people, a sense of social consciousness. Consciousness will make people capable of making the right decisions for their own wellbeing and to spread awareness about financial aid, elementary education, rehabilitation, health services available to them. People are unaware of their own rights, services available to them. Our efforts will be to educate them.
+                  </p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%;" ><i class="fas fa-book-reader" style="color: green; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-coins" style="color: gold; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                    </div>
+                    <div class="row">
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-ambulance" style="color: red; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-user-friends" style="color: cornflowerblue; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                    </div>
+                    <div class="row">
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-balance-scale" style="color: brown; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-hands-helping" style="color: orange; font-size: 100px;"></i></div>
+                      <div class="col" ></div>
+                    </div>
+                  </div>
+
+
+                </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-pink btn-sm" data-dismiss="modal" style="color: #ffffff">Close</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+
+      </div>
+      
+
+    </div>
+
+    <div class="col-md-4 mb-md-0 mb-5">
+
+      
+      <div class="row" >
+
+        
+        <div class="col-lg-2 col-md-3 col-2">
+          <i class="fas fa-bullhorn blue-text fa-2x"></i>
+        </div>
+        
+
+        
+        <div class="col-lg-10 col-md-9 col-10">
+          <h4 class="font-weight-bold">Our Approach</h4>
+          <p class="grey-text">Thanks to our volunteers, weve started, with limited resources but unlimited passion. With support of authorities...</p>
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">Learn More</button> -->
+          <a class="btn btn-purple btn-sm" data-toggle="modal" data-target="#exampleModalCenter3">Learn more</a>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Our Approach</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                  <p>Thanks to our volunteers, we’ve started, with limited resources but unlimited passion. With support of authorities, govt. bodies, local groups and organizations we are working to eliminate impoverishment and arrange basic necessities for children. The idea is to enact the plans on ground and keep encouraging people to do so. Our people, our volunteers are working hard to achieve the vision we have. Small but effective steps to make an Impact!
+                  </p>
+                </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-purple btn-sm" data-dismiss="modal" style="color: #ffffff">Close</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+  
+
+</section>
+
+</div>
+
+
+
+</div>
+<hr>
+
+        <div class="container" style="padding-bottom: 5%;margin-top: 5%">
+                <h2 class="h1-responsive font-weight-bold text-center my-5">Our Team</h2>
+            <div class="row">
+                
+                <div class="col-md-4"  style="text-align: center">
+                  <%= link_to image_tag("chand-kanwar.jpeg", class: 'dot')%>
+                  <div style="padding-bottom:5%"></div>
+                    <span><h3>Chand Kanwar</h3></span>
+                    <span><h6>Chair Person</h6></span>
+                </div>
+
+                <div class="col-md-4"  style="text-align: center">
+                    <%= link_to image_tag("mangla-sharma.jpeg", class: 'dot')%>
+                    <div style="padding-bottom:5%"></div>
+                    <span><h3>Mangla Sharma</h3></span>
+                    <span><h6>Secretary</h6></span>
+                </div>
+
+                <div class="col-md-4"  style="text-align: center">
+                  <%= link_to image_tag("neha-sharma.jpeg", class: 'dot')%>
+                    <div style="padding-bottom:5%"></div>
+                    <span><h3>Neha Sharma</h3></span>
+                    <span><h6>Treasurer</h6></span>
+                </div>
+                
+            </div>
+        </div>
+
+        <script type="text/javascript">
+          stick = false;
+        </script>
+

@@ -1,0 +1,210 @@
+<style>
+  .checkbox label:after,
+  .radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .checkbox .cr,
+  .radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+  }
+
+  .radio .cr {
+    border-radius: 50%;
+  }
+
+  .checkbox .cr .cr-icon,
+  .radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+  }
+
+  .radio .cr .cr-icon {
+    margin-left: 0.04em;
+  }
+
+  .checkbox label input[type="checkbox"],
+  .radio label input[type="radio"] {
+    display: none;
+  }
+
+  .checkbox label input[type="checkbox"] + .cr > .cr-icon,
+  .radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+  }
+
+  .checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+  .radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+  }
+
+  .checkbox label input[type="checkbox"]:disabled + .cr,
+  .radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+  }
+</style>
+
+<div class="col">
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Join Us</h2>
+  <!-- Form -->
+
+  <%= render template: "pages/error" %>
+
+
+  <div class="contact_from_area mb-100 clearfix wow fadeInUp">
+    <div class="contact_form">
+      <div class="contact_input_area form-area">
+        <%= form_for @volunteer do |form| %>
+
+
+          <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col col-lg-4" style="padding-bottom:3%">
+              <div class="custom-file">
+                <%= form.file_field :image, class: 'custom-file-input', id: 'customFileLang' %>
+                <label class="custom-file-label" for="customFileLang">Upload Your Image</label>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :first_name, class: 'form-control mb-30', placeholder: 'First Name', id: 'fname' %>
+                <span id="first" class="text-danger"></span>
+              </div>
+            </div>
+
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :last_name, class: 'form-control mb-30', placeholder: 'Last Name', id: 'lname' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="pro-row">
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :age, class: 'form-control mb-30', placeholder: 'Age', id: 'age' %>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6" id="pro-div">
+              <div class="form-group">
+                <%= form.select(:profession, [['Profession', {class: 'disabled'}], "ARCHITECT", "DOCTOR", "LAWYER", "NURSE", "ENGINEER", "GOVERNMENT", "JOB", "PHYSICIAN", "NOTARY", "PHARMACIST", "PEDIATRICIAN", "HOUSEWIFE", "OTHER"], {}, {:class => 'form-control', :id => 'pro-field'}) %>
+              </div>
+            </div>
+
+            <div id="pro-text"></div>
+          </div>
+
+
+          <div class="row">
+
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+
+                <%= form.select(:gender, [['Gender', {class: 'disabled'}], 'Male', 'Female', 'Other'], {}, {:class => 'form-control'}) %>
+
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :address, class: 'form-control mb-30', placeholder: 'Address', id: 'address' %>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :contact, class: 'form-control mb-30', placeholder: 'Contact', id: 'contact' %>
+
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.text_field :email, class: 'form-control mb-30', placeholder: 'Email', id: 'email' %>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+
+            <div class="col-6 col-lg-6">
+              <div class="form-group">
+                <%= form.select(:blood_group, [['Blood Group', {class: 'disabled'}], 'A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'], {}, {:class => 'form-control'}) %>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="row">
+            <div class="col-12" align="center" style="padding: 50px">
+              <%= form.submit "SUBMIT", class: "btn btn-block btn-success" %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    let field = true;
+    document.getElementById('pro-field').addEventListener('click', function () {
+        if (document.getElementById('pro-field').value === 'OTHER' && field) {
+            const html = "<input type='text' class='form-control mb-30' placeholder='Profession' />"
+
+
+            document.getElementById('pro-div').classList.remove('col-6', 'col-lg-6');
+            document.getElementById('pro-div').classList.add('col-3', 'col-lg-3');
+
+            field = false;
+            document.getElementById('pro-text').innerHTML = html;
+        } else {
+            document.getElementById('pro-text').innerHTML = ""
+            document.getElementById('pro-div').classList.remove('col-3', 'col-lg-3');
+            document.getElementById('pro-div').classList.add('col-6', 'col-lg-6');
+            field = true;
+        }
+    })
+</script>
+
+
+
+
+

@@ -1,0 +1,247 @@
+<style>
+  .show{
+    display: block;
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .mobile-photos{
+    padding-top:10px;
+    height:400px;
+    width: auto !important;
+
+  }
+
+  element.style {
+    width: 350px !important;
+  }
+  .button-active,
+  .toggle-button:hover{
+    background: #007bff;
+  }
+  .btn-pad{
+    border: 1px solid #007bff;
+  }
+  .pad {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  /* Desktop View */
+  @media screen and (max-width : 2560px) {
+    .mobile {
+      display: none;
+    }
+    .laptop {
+      display: show;
+    }
+  }
+
+  /* Laptop View */
+  @media screen and (max-width : 1025px) {
+    .btn-pad {
+      width: 200px !important;
+    }
+    .width {
+      width: 670px !important;
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+  }
+
+  /* Tablet View */
+  @media screen and (max-width : 768px) {
+    .laptop {
+      display : none;
+    }
+    .mobile {
+      display: block !important;
+    }
+    .photos{
+      width: 679px;
+      margin-left: 100%;
+    }
+  }
+
+  /* Mobile -L view */
+  @media screen and (max-width : 426px) {
+    .laptop {
+      display : none;
+    }
+    .mobile {
+      display: block !important;
+    }
+    .photos{
+      width: 354px;
+      margin-left: 40%;
+    }
+  }
+
+  /* Mobile -M view */
+  @media screen and (max-width : 380px) {
+    .laptop {
+      display : none;
+    }
+    .mobile {
+      display: block !important;
+    }
+    .photos{
+      width: 306px;
+      margin-left: 10%;
+    }
+  }
+
+  /* Mobile -S view */
+  @media screen and (max-width : 321px) {
+    .laptop {
+      display : none;
+    }
+    .mobile {
+      display: block !important;
+    }
+    .photos{
+      width: 254px;
+    }
+  }
+</style>
+
+<div class="conatainer laptop" id="donate">
+  <div class="card" style="width:95%;margin:auto">
+    <div class="card-body">
+      <h2 class="h3-responsive font-weight-bold text-center my-5" style="color:#007bff" >Donation</h2>
+
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col pad">
+            <input type="button" class="toggle-button btn-block button-active btn-pad" value="Paytm" id="paytm" style="width: 260px; border-radius: 0px; box-shadow: 0px 0px 0px;"/>
+          </div>
+          <div class="col pad">
+            <input type="button" class="toggle-button btn-block btn-pad" value="UPI" id="upi" style="width: 260px; border-radius: 0px; box-shadow: 0px 0px 0px;"/>
+          </div>
+          <div class="col pad">
+            <input type="button" class="toggle-button btn-block btn-pad" value="Bank" id="bank" style="width: 260px; border-radius: 0px; box-shadow: 0px 0px 0px;"/>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="container" style="margin-bottom: 1%">
+        <div class="row">
+          <div class="col"></div>
+          <div class="payment-block col-9 pad" id="payment-block">
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+          var addActiveClass = function(buttonPressed){
+              document.getElementById('paytm').classList.remove('button-active');
+              document.getElementById('upi').classList.remove('button-active');
+              document.getElementById('bank').classList.remove('button-active');
+              buttonPressed.classList.add("button-active");
+          }
+
+          document.getElementById('paytm').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('paytm'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+          })
+
+          document.getElementById('upi').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('upi'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+          })
+
+          document.getElementById('bank').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('bank'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+          })
+      </script>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Mobile View-->
+
+<div class="conatainer mobile" id="donate">
+  <div class="card" style="width:95%;margin:auto">
+    <div class="card-body">
+      <h2 class="h3-responsive font-weight-bold text-center my-5" style="color:#007bff" >Donation</h2>
+
+      <div class="container" style="margin-bottom: 5%">
+        <div class="row">
+          <div class="col-lg-12">
+            <input type="button" class="toggle-button btn-block button-active" value="Paytm" id="paytm1"/>
+          </div>
+          <div>
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+          </div>
+          <div class="col-lg-12">
+            <input type="button" class="toggle-button btn-block" value="UPI" id="upi1"/>
+          </div>
+          <div>
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+          </div>
+          <div class="col-lg-12">
+            <input type="button" class="toggle-button btn-block" value="Bank" id="bank1"/>
+          </div>
+          <div>
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function init(){
+        document.getElementById('bank-img').classList.add('hide');
+        document.getElementById('upi-img').classList.add('hide');
+        document.getElementById('paytm-img').classList.add('hide');
+        document.getElementById('upi-img').classList.remove('show');
+        document.getElementById('bank-img').classList.remove('show');
+        document.getElementById('paytm1').classList.remove('button-active');
+        document.getElementById('upi1').classList.remove('button-active');
+        document.getElementById('bank1').classList.remove('button-active');
+    }
+
+
+      document.getElementById('paytm1').addEventListener('click',function(){
+          init();
+          document.getElementById('paytm-img').classList.add('show');
+          document.getElementById('paytm-img').classList.remove('hide');
+          document.getElementById('paytm1').classList.add('button-active');
+          console.log('Paytm Pressed');
+      });
+
+      document.getElementById('upi1').addEventListener('click',function(){
+          init();
+          document.getElementById('upi-img').classList.add('show');
+          document.getElementById('upi-img').classList.remove('hide');
+          document.getElementById('upi1').classList.add('button-active')
+          console.log('UPI Pressed');
+      });
+
+      document.getElementById('bank1').addEventListener('click',function(){
+          init();
+          document.getElementById('bank-img').classList.add('show');
+          document.getElementById('bank-img').classList.remove('hide');
+          document.getElementById('bank1').classList.add('button-active')
+          console.log('Bank Pressed');
+      });
+  </script>
+</div>
+

@@ -1,0 +1,66 @@
+<% content_for :navbar do %>
+  <p></p>
+<% end %>
+
+<style>
+
+  .new_user {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 20% auto;
+
+  }
+  .new_user .checkbox {
+    font-weight: 400;
+  }
+  .new_user .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .new_user .form-control:focus {
+    z-index: 2;
+  }
+  .new_user input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .new_user input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
+
+<div class="container text-center">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <%= link_to image_tag("A2.png", class: 'mb-4',width:'72',height:'72' ), root_path %>
+  <h1 class="h3 mb-3 font-weight-normal">Change Password</h1>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <% if @minimum_password_length %>
+      <em class="text-muted">(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, class:'form-control', placeholder:'New Password' %>
+
+
+  <label for="inputPassword" class="sr-only">Confirm New Password</label>
+  <%= f.password_field :password, class:'form-control', placeholder:'Confirm New Password' %>
+
+
+  <%= f.submit "Change My Password!", class:'btn btn-block btn-lg btn-primary' %><br/><br/>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "Back to Homepage", root_path %>
+<% end %>
+</div>
+
+
+<% content_for :footer do %>
+  <p></p>
+<% end %>

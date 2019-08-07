@@ -1,0 +1,143 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.dot {
+    height: 13rem;
+    width: 13rem;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    border: 5px solid #D9D9D9;
+    display: inline-block;
+    }
+  .bg-dark {
+    background-color: #D9D9D9 !important;
+  }
+
+  .nav-link{
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .active{
+    background-color: #2f2f2f !important;
+    
+    font-size: 20px;
+  }
+
+
+
+  /* donate us page */
+
+  .toggle-button {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: auto;
+    cursor: pointer;
+    padding: 10px;
+      border: 1px solid #007bff;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: Poppins;
+    color: #2f2f2f;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #ffffff;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  }
+
+  .button-active,.toggle-button:hover {
+    border: 1px solid #ffffff;
+    background: #6ddb36;
+  }
+
+
+  .payment-block {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: auto;
+    margin-bottom: 5%;
+    overflow: hidden;
+    border: none;
+    color: #2f2f2f;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: Poppins;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: #e6ecef;
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3) ;
+  }
+
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.sticky-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.slideshow-image{
+  width: 100% !important;
+height: 45vw !important;
+}
+
+.navbar-logo{
+  height: 100px;
+  width: 100px;
+}
+
+.card-text{
+  font-size: 110% !important;
+}
+
+.dropdown-menu{
+    background-color: #a5a5a5;
+}
+
+.dropdown-item{
+
+    font-size: 110% !important;
+}
+
+.dropdown-item :hover {
+    color: #000 !important;
+    background-color: #a5a5a5;
+}
+
+@media screen and (max-width: 425px) {
+    .slideshow-image{
+        height: 50vw !important;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+    .form-area {
+        width: 75% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .form-area {
+        width: 100% !important;
+        margin: auto !important;
+    }
+}

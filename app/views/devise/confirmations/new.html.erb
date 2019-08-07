@@ -1,0 +1,29 @@
+
+<% content_for :navbar do %>
+  <p></p>
+<% end %>
+
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+
+  <%= link_to image_tag("A2.png", class: 'mb-4',width:'72',height:'72' ), root_path %>
+  <h1 class="h3 mb-3 font-weight-normal">Resend Confirmation</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+
+  <%= f.submit "Resend Password Reset Instructions", class:'btn btn-block btn-md btn-primary' %><br/><br/>
+
+<% end %>
+
+<%= link_to "Log in", new_session_path(resource_name) %><br />
+<%= link_to "Back to Homepage", root_path %>
+
+
+
+
+
+<% content_for :footer do %>
+  <p></p>
+<% end %>
