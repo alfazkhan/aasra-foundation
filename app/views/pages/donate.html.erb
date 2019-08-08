@@ -1,110 +1,4 @@
-<style>
-  .show{
-    display: block;
-  }
 
-  .hide{
-    display: none;
-  }
-
-  .mobile-photos{
-    padding-top:10px;
-    height:400px;
-    width: auto !important;
-
-  }
-
-  element.style {
-    width: 350px !important;
-  }
-  .button-active,
-  .toggle-button:hover{
-    background: #007bff;
-  }
-  .btn-pad{
-    border: 1px solid #007bff;
-  }
-  .pad {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  /* Desktop View */
-  @media screen and (max-width : 2560px) {
-    .mobile {
-      display: none;
-    }
-    .laptop {
-      display: show;
-    }
-  }
-
-  /* Laptop View */
-  @media screen and (max-width : 1025px) {
-    .btn-pad {
-      width: 200px !important;
-    }
-    .width {
-      width: 670px !important;
-      padding-right: 0px !important;
-      padding-left: 0px !important;
-    }
-  }
-
-  /* Tablet View */
-  @media screen and (max-width : 768px) {
-    .laptop {
-      display : none;
-    }
-    .mobile {
-      display: block !important;
-    }
-    .photos{
-      width: 679px;
-      margin-left: 100%;
-    }
-  }
-
-  /* Mobile -L view */
-  @media screen and (max-width : 426px) {
-    .laptop {
-      display : none;
-    }
-    .mobile {
-      display: block !important;
-    }
-    .photos{
-      width: 354px;
-      margin-left: 40%;
-    }
-  }
-
-  /* Mobile -M view */
-  @media screen and (max-width : 380px) {
-    .laptop {
-      display : none;
-    }
-    .mobile {
-      display: block !important;
-    }
-    .photos{
-      width: 306px;
-      margin-left: 10%;
-    }
-  }
-
-  /* Mobile -S view */
-  @media screen and (max-width : 321px) {
-    .laptop {
-      display : none;
-    }
-    .mobile {
-      display: block !important;
-    }
-    .photos{
-      width: 254px;
-    }
-  }
-</style>
 
 <div class="conatainer laptop" id="donate">
   <div class="card" style="width:95%;margin:auto">
@@ -155,14 +49,14 @@
 
               addActiveClass(document.getElementById('upi'));
               var block=document.getElementById('payment-block');
-              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page-2.png" class="photos" style="height: 500px">';
           })
 
           document.getElementById('bank').addEventListener('click',function(){
 
               addActiveClass(document.getElementById('bank'));
               var block=document.getElementById('payment-block');
-              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page.png" class="photos" style="height: 500px">';
           })
       </script>
 
@@ -192,13 +86,13 @@
             <input type="button" class="toggle-button btn-block" value="UPI" id="upi1"/>
           </div>
           <div>
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page-2.png" class="photos show mobile-photos" id="upi-img">
           </div>
           <div class="col-lg-12">
             <input type="button" class="toggle-button btn-block" value="Bank" id="bank1"/>
           </div>
           <div>
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page.png" class="photos show mobile-photos" id="bank-img">
           </div>
         </div>
       </div>
@@ -218,13 +112,12 @@
         document.getElementById('bank1').classList.remove('button-active');
     }
 
-
+      init();
       document.getElementById('paytm1').addEventListener('click',function(){
           init();
           document.getElementById('paytm-img').classList.add('show');
           document.getElementById('paytm-img').classList.remove('hide');
           document.getElementById('paytm1').classList.add('button-active');
-          console.log('Paytm Pressed');
       });
 
       document.getElementById('upi1').addEventListener('click',function(){
@@ -232,7 +125,6 @@
           document.getElementById('upi-img').classList.add('show');
           document.getElementById('upi-img').classList.remove('hide');
           document.getElementById('upi1').classList.add('button-active')
-          console.log('UPI Pressed');
       });
 
       document.getElementById('bank1').addEventListener('click',function(){
@@ -240,7 +132,6 @@
           document.getElementById('bank-img').classList.add('show');
           document.getElementById('bank-img').classList.remove('hide');
           document.getElementById('bank1').classList.add('button-active')
-          console.log('Bank Pressed');
       });
   </script>
 </div>

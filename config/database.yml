@@ -82,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: aasra
+  database: aasra-production
   username: aasra
   password: <%= ENV['AASRA_DATABASE_PASSWORD'] %>
