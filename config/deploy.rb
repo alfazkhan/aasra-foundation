@@ -17,6 +17,12 @@ namespace :deploy do
   end
 end
 
+desc "Remove all but the last release"
+task :cleanup_all do
+  set :keep_releases, 1
+  invoke "deploy:cleanup"
+end
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -41,6 +47,5 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets","vendor/bundl
 
 # Default value for keep_releases is 5
 set :keep_releases, 1
-after "deploy:update", "deploy:cleanup"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure

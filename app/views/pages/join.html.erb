@@ -129,19 +129,20 @@
 
 <script>
     let field = true;
-    document.getElementById('pro-field').addEventListener('click', function () {
-        if (document.getElementById('pro-field').value === 'OTHER' && field) {
+    document.addEventListener('click', function () {
+        if (document.getElementById('pro-field').value === 'OTHER') {
+            if(field){
             const html = "<input type='text' class='form-control mb-30' placeholder='Profession' />"
-
-
             document.getElementById('pro-div').classList.remove('col-6', 'col-lg-6');
             document.getElementById('pro-div').classList.add('col-3', 'col-lg-3');
-
             document.getElementById('pro-text').innerHTML = html;
+            field = false;
+            }
         } else {
-            document.getElementById('pro-text').innerHTML = ""
+            document.getElementById('pro-text').innerHTML = "";
             document.getElementById('pro-div').classList.remove('col-3', 'col-lg-3');
             document.getElementById('pro-div').classList.add('col-6', 'col-lg-6');
+            field = true;
         }
     })
 </script>
