@@ -129,7 +129,7 @@
 
 <script>
     let field = true;
-    document.addEventListener('click', function () {
+    document.getElementById('pro-field').addEventListener('change', function () {
         if (document.getElementById('pro-field').value === 'OTHER') {
             if(field){
             const html = "<input type='text' class='form-control mb-30' placeholder='Profession' />"
