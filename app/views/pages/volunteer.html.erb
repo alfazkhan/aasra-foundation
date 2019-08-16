@@ -1,3 +1,8 @@
+<% content_for :for_head do %>
+  <title>Aasra | Volunteers</title>
+  <meta name="description" content="Welcome To The Aasra Foundation Volunteers Info Section"/>
+<% end %>
+
 <div class="container-fluid">
   <h2 class="h1-responsive font-weight-bold text-center my-5">Our Volunteers</h2>
 
@@ -22,18 +27,7 @@
                 <h4 class="font-weight-bold mb-3"><%= @volunteers[i+j].first_name %></h4>
                 <h6 class="font-weight-bold grey-text mb-3"><%= @volunteers[i+j].profession %></h6>
                 <p class="grey-text"><%= @volunteers[i+j].description %></p>
-                <!-- Facebook-->
-                <a class="p-2 fa-lg fb-ic">
-                  <i class="fab fa-facebook-f"> </i>
-                </a>
-                <!--YouTube -->
-                <a class="p-2 fa-lg yt-ic">
-                  <i class="fab fa-youtube"> </i>
-                </a>
-                <!--Instagram-->
-                <a class="p-2 fa-lg ins-ic">
-                  <i class="fab fa-instagram"> </i>
-                </a>
+
               </div>
             </div>
           <% end %>

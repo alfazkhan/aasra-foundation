@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aasra</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+
+
+    <% if content_for? :for_head %>
+      <%= yield :for_head %>
+    <%else %>
+      <title>Aasra | Homepage</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <meta name="description" content="Welcome to Official Website of Aasra Foundation">
+    <% end %>
+
+
     <meta charset="UTF-8">
-    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

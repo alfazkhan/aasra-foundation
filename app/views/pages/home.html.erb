@@ -4,7 +4,12 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <%if @images.first%>
-                  <%= image_tag(@images[0].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                  <div>
+                    <%= image_tag(@images[0].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                    <div class="text-center" style="color: white;font-size: 20px">
+                      <%= @images[0].title %>
+                    </div>
+                  </div>
                   </div>
                 <%end%>
 
@@ -12,6 +17,9 @@
                   <% for i in 1...@images.length%>
                     <div class="carousel-item">
                       <%= image_tag(@images[i].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                        <div class="text-center" style="color: white;font-size: 20px">
+                          <%= @images[i].title %>
+                        </div>
                     </div>
                   <%end%>
                 <%end%>
@@ -117,23 +125,23 @@
                   <div class="container">
                     <div class="row">
                       <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%;" ><i class="fas fa-book-reader" style="color: green; font-size: 100px;"></i></div>
+                      <div class="col" style="padding-bottom:10%;" ><i class="fas fa-book-reader" style="color: green; font-size: 100px;"></i><br/> <div class="mission-text text-center"><h5>Education</h5></div>  </div>
                       <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%"><i class="fas fa-coins" style="color: gold; font-size: 100px;"></i></div>
-                      <div class="col" ></div>
-                    </div>
-                    <div class="row">
-                      <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%"><i class="fas fa-ambulance" style="color: red; font-size: 100px;"></i></div>
-                      <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%"><i class="fas fa-user-friends" style="color: cornflowerblue; font-size: 100px;"></i></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-coins" style="color: gold; font-size: 100px;"></i><div class="mission-text text-center"><h5>Financial Aid</h5></div></div>
                       <div class="col" ></div>
                     </div>
                     <div class="row">
                       <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%"><i class="fas fa-balance-scale" style="color: brown; font-size: 100px;"></i></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-ambulance" style="color: red; font-size: 100px;"></i><div class="mission-text text-center"><h5>Rehabilitation</h5></div></div>
                       <div class="col" ></div>
-                      <div class="col" style="padding-bottom:10%"><i class="fas fa-hands-helping" style="color: orange; font-size: 100px;"></i></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-user-friends" style="color: cornflowerblue; font-size: 100px;"></i><div class="mission-text text-center"><h5>Health Services</h5></div></div>
+                      <div class="col" ></div>
+                    </div>
+                    <div class="row">
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-balance-scale" style="color: brown; font-size: 100px;"></i><div class="mission-text text-center"><h5>Resolve Rivalries</h5></div></div>
+                      <div class="col" ></div>
+                      <div class="col" style="padding-bottom:10%"><i class="fas fa-hands-helping" style="color: orange; font-size: 100px;"></i><div class="mission-text text-center"><h5>Justice</h5></div></div>
                       <div class="col" ></div>
                     </div>
                   </div>

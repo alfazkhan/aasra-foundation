@@ -293,7 +293,7 @@ element.style {
 
 .slideshow-image{
     width: 100% !important;
-    height: 900px !important;
+    height: 600px !important;
 }
 
 @media screen and (max-width: 425px) {
@@ -366,4 +366,8 @@ element.style {
     margin: auto;
     margin-top: 3%;
     border-radius: 10px 10px;
+}
+
+.mission-text{
+    padding-top: 20px;
 }

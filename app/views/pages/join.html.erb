@@ -1,4 +1,7 @@
-
+<% content_for :for_head do %>
+  <title>Aasra | Join Us</title>
+  <meta name="description" content="Join us in the greater cause by filling out the form"/>
+<% end %>
 
 <div class="col">
   <h2 class="h1-responsive font-weight-bold text-center my-5">Join Us</h2>
@@ -134,13 +137,11 @@
             document.getElementById('pro-div').classList.remove('col-6', 'col-lg-6');
             document.getElementById('pro-div').classList.add('col-3', 'col-lg-3');
 
-            field = false;
             document.getElementById('pro-text').innerHTML = html;
         } else {
             document.getElementById('pro-text').innerHTML = ""
             document.getElementById('pro-div').classList.remove('col-3', 'col-lg-3');
             document.getElementById('pro-div').classList.add('col-6', 'col-lg-6');
-            field = true;
         }
     })
 </script>
