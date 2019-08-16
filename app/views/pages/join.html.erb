@@ -9,7 +9,6 @@
 
   <%= render template: "pages/error" %>
 
-
   <div class="contact_from_area mb-100 clearfix wow fadeInUp">
     <div class="contact_form">
       <div class="contact_input_area form-area">
@@ -33,7 +32,7 @@
 
             <div class="col-6 col-lg-6">
               <div class="form-group">
-                <%= form.text_field :first_name, class: 'form-control mb-30', placeholder: 'First Name', id: 'fname' %>
+                <%= form.text_field :first_name, class: 'form-control mb-30', placeholder: 'First Name*', id: 'fname' %>
                 <span id="first" class="text-danger"></span>
               </div>
             </div>
@@ -41,7 +40,7 @@
 
             <div class="col-6 col-lg-6">
               <div class="form-group">
-                <%= form.text_field :last_name, class: 'form-control mb-30', placeholder: 'Last Name', id: 'lname' %>
+                <%= form.text_field :last_name, class: 'form-control mb-30', placeholder: 'Last Name*', id: 'lname' %>
               </div>
             </div>
           </div>
@@ -50,17 +49,21 @@
 
             <div class="col-6 col-lg-6">
               <div class="form-group">
-                <%= form.text_field :age, class: 'form-control mb-30', placeholder: 'Age', id: 'age' %>
+                <%= form.text_field :age, class: 'form-control mb-30', placeholder: 'Age*', id: 'age' %>
               </div>
             </div>
 
             <div class="col-6 col-lg-6" id="pro-div">
               <div class="form-group">
-                <%= form.select(:profession, [['Profession', {class: 'disabled'}], "ARCHITECT", "DOCTOR", "LAWYER", "NURSE", "ENGINEER", "GOVERNMENT", "JOB", "PHYSICIAN", "NOTARY", "PHARMACIST", "PEDIATRICIAN", "HOUSEWIFE", "OTHER"], {}, {:class => 'form-control', :id => 'pro-field'}) %>
+                <%= form.select(:profession, [['Profession*', {class: 'disabled'}], "ARCHITECT", "DOCTOR", "LAWYER", "NURSE", "ENGINEER", "GOVERNMENT", "JOB", "PHYSICIAN", "NOTARY", "PHARMACIST", "PEDIATRICIAN", "HOUSEWIFE", "OTHER"], {}, {:class => 'form-control', :id => 'pro-field'}) %>
               </div>
             </div>
+          </div>
 
-            <div id="pro-text"></div>
+          <div class="row">
+            <div class="col">
+              <div id="pro-text"></div>
+            </div>
           </div>
 
 
@@ -70,7 +73,7 @@
             <div class="col-6 col-lg-6">
               <div class="form-group">
 
-                <%= form.select(:gender, [['Gender', {class: 'disabled'}], 'Male', 'Female', 'Other'], {}, {:class => 'form-control'}) %>
+                <%= form.select(:gender, [['Gender*', {class: 'disabled'}], 'Male', 'Female', 'Other'], {}, {:class => 'form-control'}) %>
 
               </div>
             </div>
@@ -87,7 +90,7 @@
 
             <div class="col-6 col-lg-6">
               <div class="form-group">
-                <%= form.text_field :contact, class: 'form-control mb-30', placeholder: 'Contact', id: 'contact' %>
+                <%= form.text_field :contact, class: 'form-control mb-30', placeholder: 'Contact*', id: 'contact' %>
 
               </div>
             </div>
@@ -105,7 +108,7 @@
 
             <div class="col-6 col-lg-6">
               <div class="form-group">
-                <%= form.select(:blood_group, [['Blood Group', {class: 'disabled'}], 'A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'], {}, {:class => 'form-control'}) %>
+                <%= form.select(:blood_group, [['Blood Group*', {class: 'disabled'}], 'A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'], {}, {:class => 'form-control'}) %>
               </div>
             </div>
 
@@ -132,9 +135,12 @@
     document.getElementById('pro-field').addEventListener('change', function () {
         if (document.getElementById('pro-field').value === 'OTHER') {
             if(field){
-            const html = "<input type='text' class='form-control mb-30' placeholder='Profession' />"
+            const html = "<input type='text' class='form-control mb-30' style='border: 1px solid red' placeholder=' Enter Your Profession' />";
+
             document.getElementById('pro-div').classList.remove('col-6', 'col-lg-6');
             document.getElementById('pro-div').classList.add('col-3', 'col-lg-3');
+            document.getElementById('pro-text').classList.add('pro-text-field');
+
             document.getElementById('pro-text').innerHTML = html;
             field = false;
             }
@@ -142,6 +148,8 @@
             document.getElementById('pro-text').innerHTML = "";
             document.getElementById('pro-div').classList.remove('col-3', 'col-lg-3');
             document.getElementById('pro-div').classList.add('col-6', 'col-lg-6');
+            document.getElementById('pro-text').classList.remove('pro-text-field');
+
             field = true;
         }
     })

@@ -4,9 +4,6 @@ class VolunteerController < ApplicationController
     @volunteer = Volunteer.new(volunteer_params)
     @volunteer.profession.upcase!
 
-    puts '==============================='
-    puts @volunteer.image
-    puts '=================================='
 
     check_params(@volunteer)
 
@@ -22,15 +19,15 @@ class VolunteerController < ApplicationController
   private
 
   def check_params(params)
-    if params.gender == 'Gender'
+    if params.gender == 'Gender*'
       params.gender = ''
     end
 
-    if params.profession == 'PROFESSION'
+    if params.profession == 'PROFESSION*' or params.profession == 'OTHER'
       params.profession = ''
     end
 
-    if params.blood_group == 'Blood Group'
+    if params.blood_group == 'Blood Group*'
       params.blood_group = ''
     end
   end
