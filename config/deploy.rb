@@ -10,6 +10,13 @@ set :repo_url, "https://github.com/alfazkhan/aasra-foundation.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/#{fetch :application}"
 
+namespace :deploy do
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+end
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -33,7 +40,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets","vendor/bundl
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-set :keep_releases, 500
-
+set :keep_releases, 1
+after "deploy:update", "deploy:cleanup"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
