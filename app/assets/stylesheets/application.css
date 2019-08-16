@@ -293,12 +293,12 @@ element.style {
 
 .slideshow-image{
     width: 100% !important;
-    height: 600px !important;
+    height: auto !important;
 }
 
 @media screen and (max-width: 425px) {
     .slideshow-image{
-        height: 350px !important;
+        height: 300px !important;
     }
 }
 
