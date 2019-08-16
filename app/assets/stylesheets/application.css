@@ -302,6 +302,13 @@ element.style {
     }
 }
 
+.slideshow-title{
+    color: white;font-size: 30px;font-weight: bold;padding: 1%;
+}
+
+.slideshow-caption{
+    color: white;font-size: 20px;padding-bottom: 5px;
+}
 
 .checkbox label:after,
 .radio label:after {

@@ -6,8 +6,11 @@
                 <%if @images.first%>
                   <div>
                     <%= image_tag(@images[0].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
-                    <div class="text-center" style="color: white;font-size: 20px">
+                    <div class="text-center slideshow-title">
                       <%= @images[0].title %>
+                    </div>
+                    <div class="text-center slideshow-caption">
+                      <%= @images[0].caption %>
                     </div>
                   </div>
                   </div>
@@ -17,9 +20,12 @@
                   <% for i in 1...@images.length%>
                     <div class="carousel-item">
                       <%= image_tag(@images[i].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
-                        <div class="text-center" style="color: white;font-size: 20px">
+                        <div class="text-center slideshow-title">
                           <%= @images[i].title %>
                         </div>
+                      <div class="text-center slideshow-caption">
+                        <%= @images[i].caption %>
+                      </div>
                     </div>
                   <%end%>
                 <%end%>
