@@ -12,6 +12,10 @@ set :repo_url, "https://github.com/alfazkhan/aasra-foundation.git"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 
 
+task :maintenance do
+  puts "going maintaince"
+  run "cd #{current_path}; rake maintenance:start"
+end
 
 
 
