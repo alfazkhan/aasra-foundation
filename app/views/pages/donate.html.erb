@@ -1,34 +1,4 @@
-<% content_for :scripts do %>
-  <script type="text/javascript">
-      var addActiveClass = function(buttonPressed){
-          document.getElementById('paytm').classList.remove('button-active');
-          document.getElementById('upi').classList.remove('button-active');
-          document.getElementById('bank').classList.remove('button-active');
-          buttonPressed.classList.add("button-active");
-      }
 
-      document.getElementById('paytm').addEventListener('click',function(){
-
-          addActiveClass(document.getElementById('paytm'));
-          var block=document.getElementById('payment-block');
-          block.innerHTML='<img src="<%= image_path('paytm.jpeg') %>" class="photos" style="height: 500px">';
-      })
-
-      document.getElementById('upi').addEventListener('click',function(){
-
-          addActiveClass(document.getElementById('upi'));
-          var block=document.getElementById('payment-block');
-          block.innerHTML='<img src="<%= image_path('upi.png') %>" class="photos" style="height: 500px">';
-      })
-
-      document.getElementById('bank').addEventListener('click',function(){
-
-          addActiveClass(document.getElementById('bank'));
-          var block=document.getElementById('payment-block');
-          block.innerHTML='<img src="<%= image_path('bank.png') %>" class="photos" style="height: 500px">';
-      })
-  </script>
-<% end %>
 
 <div class="conatainer laptop" id="donate">
   <div class="card" style="width:95%;margin:auto">
@@ -63,7 +33,35 @@
 
 
 
+      <script type="text/javascript">
+          var addActiveClass = function(buttonPressed){
+              document.getElementById('paytm').classList.remove('button-active');
+              document.getElementById('upi').classList.remove('button-active');
+              document.getElementById('bank').classList.remove('button-active');
+              buttonPressed.classList.add("button-active");
+          }
 
+          document.getElementById('paytm').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('paytm'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="<%= image_path('paytm.jpeg') %>" class="photos" style="height: 500px">';
+          })
+
+          document.getElementById('upi').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('upi'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="<%= image_path('upi.png') %>" class="photos" style="height: 500px">';
+          })
+
+          document.getElementById('bank').addEventListener('click',function(){
+
+              addActiveClass(document.getElementById('bank'));
+              var block=document.getElementById('payment-block');
+              block.innerHTML='<img src="<%= image_path('bank.png') %>" class="photos" style="height: 500px">';
+          })
+      </script>
 
     </div>
   </div>
