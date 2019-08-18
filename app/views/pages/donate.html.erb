@@ -27,11 +27,14 @@
         <div class="row">
           <div class="col"></div>
           <div class="payment-block col-9 pad" id="payment-block">
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">
+            <img src="<%= image_path('paytm.jpeg') %>" class="photos" style="height: 500px">
           </div>
           <div class="col"></div>
         </div>
       </div>
+
+
+
 
       <script type="text/javascript">
           var addActiveClass = function(buttonPressed){
@@ -45,21 +48,21 @@
 
               addActiveClass(document.getElementById('paytm'));
               var block=document.getElementById('payment-block');
-              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos" style="height: 500px">';
+              block.innerHTML='<img src="<%= image_path('paytm.jpeg') %>" class="photos" style="height: 500px">';
           })
 
           document.getElementById('upi').addEventListener('click',function(){
 
               addActiveClass(document.getElementById('upi'));
               var block=document.getElementById('payment-block');
-              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page-2.png" class="photos" style="height: 500px">';
+              block.innerHTML='<img src="<%= image_path('upi.png') %>" class="photos" style="height: 500px">';
           })
 
           document.getElementById('bank').addEventListener('click',function(){
 
               addActiveClass(document.getElementById('bank'));
               var block=document.getElementById('payment-block');
-              block.innerHTML='<img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page.png" class="photos" style="height: 500px">';
+              block.innerHTML='<img src="<%= image_path('bank.png') %>" class="photos" style="height: 500px">';
           })
       </script>
 
@@ -83,19 +86,19 @@
             <input type="button" class="toggle-button btn-block button-active" value="Paytm" id="paytm1"/>
           </div>
           <div>
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-rails/master/app/assets/images/paytm.jpeg" class="photos show mobile-photos" id="paytm-img">
+            <img src="<%= image_path('paytm.jpeg') %>" class="photos show mobile-photos" id="paytm-img">
           </div>
           <div class="col-lg-12">
             <input type="button" class="toggle-button btn-block" value="UPI" id="upi1"/>
           </div>
           <div>
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page-2.png" class="photos show mobile-photos" id="upi-img">
+            <img src="<%= image_path('upi.png') %>" class="photos show mobile-photos" id="upi-img">
           </div>
           <div class="col-lg-12">
             <input type="button" class="toggle-button btn-block" value="Bank" id="bank1"/>
           </div>
           <div>
-            <img src="https://raw.githubusercontent.com/alfazkhan/aasra-foundation/master/app/assets/images/aasra%20page.png" class="photos show mobile-photos" id="bank-img">
+            <img src="<%= image_path('bank.png') %>" class="photos show mobile-photos" id="bank-img">
           </div>
         </div>
       </div>
