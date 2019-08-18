@@ -29,9 +29,9 @@ namespace :deploy do
   end
 
   desc "mm"
-  task :db_main do
+  task :maintenance do
     on roles :all do
-      execute "echo 'hello World'"
+      execute "cd #{current_path}; rake maintenance:start"
     end
   end
 
