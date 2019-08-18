@@ -14,6 +14,7 @@ server "192.168.0.105", user: "deploy", roles: %w{app db web}
 
 
 
+
 # role :app, %w{ubuntu@ec2-3-15-170-72.us-east-2.compute.amazonaws.com}
 # role :web, %w{ubuntu@ec2-3-15-170-72.us-east-2.compute.amazonaws.com}
 # role :db,  %w{ubuntu@ec2-3-15-170-72.us-east-2.compute.amazonaws.com}

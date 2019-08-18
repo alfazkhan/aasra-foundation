@@ -14,7 +14,9 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 namespace :deploy do
   desc "reload the database with seed data"
   task :seed do
-    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env};bundle exec rails db:reset RAILS_ENV=#{rails_env}"
+    on roles :all do
+      execute "cd #{current_path}; bundle exec rake db:seed;"
+    end
   end
 
   desc "Remove all but the last release"
@@ -25,13 +27,25 @@ namespace :deploy do
 
   desc "Database Reset"
   task :db_reset do
-    run "cd #{current_path}; bundle exec rails db:reset RAILS_ENV=#{rails_env}"
+    on roles :all do
+      execute "cd #{current_path};"
+      excecute " bundle exec rails db:reset RAILS_ENV=#{rails_env}"
+    end
+  end
+
+  desc "cd"
+  task :cddir do
+    on roles :all do
+      execute "cd #{current_path}"
+    end
   end
 
   desc "mm"
-  task :maintenance do
+  task :main_on do
     on roles :all do
-      execute "cd #{current_path}; rake maintenance:start"
+      within current_path do
+        execute 'ls'
+      end
     end
   end
 
