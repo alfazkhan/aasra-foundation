@@ -30,7 +30,9 @@ namespace :deploy do
 
   desc "mm"
   task :db_main do
-    execute "echo 'hello World'"
+    on roles :all do
+      execute "echo 'hello World'"
+    end
   end
 
 end
