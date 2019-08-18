@@ -4,6 +4,7 @@ lock "~> 3.11.0"
 set :application, "aasra-foundation"
 set :repo_url, "https://github.com/alfazkhan/aasra-foundation.git"
 
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -15,13 +16,21 @@ namespace :deploy do
   task :seed do
     run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
   end
+
+  desc "Remove all but the last release"
+  task :cleanup_all do
+    set :keep_releases, 1
+    invoke "deploy:cleanup"
+  end
+
+  desc "Database Reset"
+  task :db_reset do
+    run "cd #{current_path}; bundle exec rails db:reset RAILS_ENV=#{rails_env}"
+  end
+
 end
 
-desc "Remove all but the last release"
-task :cleanup_all do
-  set :keep_releases, 1
-  invoke "deploy:cleanup"
-end
+
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
