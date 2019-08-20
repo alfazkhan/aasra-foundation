@@ -29,3 +29,5 @@
 config/deploy\.rb___jb_tmp___
 
 *.rb___jb_tmp___
+
+\.idea/
