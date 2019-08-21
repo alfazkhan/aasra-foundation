@@ -2,7 +2,7 @@ class Volunteer < ApplicationRecord
 
   has_one_attached :image
 
-  validates :first_name,:last_name,:age,:gender,:blood_group,:address,:profession,:image, presence: true
+  validates :first_name,:last_name,:age,:gender,:address,:profession,:image, presence: true
 
   private
 
@@ -44,12 +44,24 @@ class Volunteer < ApplicationRecord
       field :first_name
       field :last_name
       field :age
-
+      field :gender , :enum do
+        enum do
+          [['MALE','MALE'],['FEMALE','FEMALE'],['OTHER','OTHER']]
+        end
+      end
       field :address
       field :contact
       field :email
-
-
+      field :blood_group , :enum do
+        enum do
+          [['A+','A+'],['A-','A-'],['B+','B+'],['B-','B-'],['O+','O+'],['O-','O-'],['AB+','AB+'],['AB-','AB-']]
+        end
+      end
+      field :profession , :enum do
+        enum do
+          [['Doctor','Doctor'],['Lawyer','Lawyer'],['Engineer','Engineer']]
+        end
+      end
 
 
       field :description

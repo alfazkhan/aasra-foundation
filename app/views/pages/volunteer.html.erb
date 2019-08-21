@@ -23,7 +23,7 @@
 
             <div class="col text-center js-cards card" style="padding: 20px; margin: 10px;" id="card">
               <div class="avatar mb-md-0 mb-4 mx-4">
-                <%= image_tag @volunteers[i+j].image.variant(resize: "200x200"), class: 'rounded z-depth-1', style:"border-radius : 50% !important; border: 5px solid green; padding: 10px !important;", height:"200px;", width:"200px;", alt: "No Image Available" %>
+                <%= image_tag @volunteers[i+j].image, class: 'rounded z-depth-1', style:"border-radius : 50% !important; border: 5px solid green; padding: 10px !important;", height:"200px;", width:"200px;", alt: "No Image Available" %>
               </div>
               <div class="mx-4">
                 <h4 class="font-weight-bold mb-3"><%= @volunteers[i+j].first_name %></h4>

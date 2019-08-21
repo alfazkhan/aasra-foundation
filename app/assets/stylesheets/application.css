@@ -373,6 +373,8 @@ element.style {
     margin: auto;
     margin-top: 3%;
     border-radius: 10px 10px;
+    height: 216px;
+    width: 384px;
 }
 
 .mission-text{
