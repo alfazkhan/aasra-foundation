@@ -27,11 +27,13 @@ class Volunteer < ApplicationRecord
         end
       end
 
-      field :profession , :enum do
-        enum do
-          [['Doctor','Doctor'],['Lawyer','Lawyer'],['Engineer','Engineer']]
-        end
-      end
+      # field :profession , :enum do
+      #   enum do
+      #     [['Doctor','Doctor'],['Lawyer','Lawyer'],['Engineer','Engineer']]
+      #   end
+      # end
+
+      field :profession
 
       field :description
 
@@ -57,12 +59,13 @@ class Volunteer < ApplicationRecord
           [['A+','A+'],['A-','A-'],['B+','B+'],['B-','B-'],['O+','O+'],['O-','O-'],['AB+','AB+'],['AB-','AB-']]
         end
       end
-      field :profession , :enum do
-        enum do
-          [['Doctor','Doctor'],['Lawyer','Lawyer'],['Engineer','Engineer']]
-        end
-      end
+      # field :profession , :enum do
+      #   enum do
+      #     [['Doctor','Doctor'],['Lawyer','Lawyer'],['Engineer','Engineer']]
+      #   end
+      # end
 
+      field :profession
 
       field :description
 

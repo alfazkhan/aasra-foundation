@@ -62,9 +62,11 @@
 </script>
 
 <script>
+
     var show = false;
     var dropdown = false;
     var nav = document.getElementById('navbarSupportedContent');
+
     document.getElementById('toggler').addEventListener('click', function () {
         if (!show) {
             nav.classList.add('show');
@@ -80,9 +82,7 @@
         }
     });
 
-    document.addEventListener('click',function () {
 
-    })
 
     document.getElementById('overlay').addEventListener('click', function () {
         if (document.getElementById("overlay").style.display = "none") {
@@ -118,11 +118,29 @@
             dropdown = !dropdown;
 
         }
+
+
     }
 
     document.getElementById('dropdownMenuLink').addEventListener('click',function () {
         updown();
-    })
+    });
+
+    document.addEventListener('click', function(e) {
+        e = e || window.event;
+        var target = e.target || e.srcElement;
+            elementClass=target.classList[0];
+        console.log(elementClass)
+            if ((elementClass != 'dropdown-item' || elementClass != 'dropdown-toggle') && dropdown)
+            {
+                document.getElementById("dropdownMenuLink").setAttribute("aria-expanded", false);
+                document.getElementById('dropdownClass').classList.remove('show');
+                document.getElementById('dropdown-menu').classList.remove('show');
+                dropdown = !dropdown;
+            }
+        console.log(dropdown)
+
+    }, false);
 
 
     if(window.location.href.indexOf('help-us') > -1)
@@ -142,8 +160,6 @@
             '<a class="dropdown-item" href="help-us/#vv">Virtual Volunteer</a>';
         document.getElementById('dropdown-menu').insertAdjacentHTML('afterbegin',drop);
     }
-
-
 
 
 </script>
