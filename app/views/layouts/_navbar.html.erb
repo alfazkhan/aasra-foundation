@@ -31,6 +31,8 @@
         </div>
       </li>
 
+
+
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdown-menu">
 
       </div>
@@ -52,6 +54,8 @@
 
 
 <script>
+
+  // Overlay Function
     function on() {
         document.getElementById("overlay").style.display = "block";
     }
@@ -59,9 +63,7 @@
     function off() {
         document.getElementById("overlay").style.display = "none";
     }
-</script>
 
-<script>
 
     var show = false;
     var dropdown = false;
@@ -76,7 +78,7 @@
             nav.classList.remove('show');
             show = false;
             if(dropdown){
-                dropdown = !dropdown
+                dropdown = false
             }
             off();
         }
@@ -110,7 +112,6 @@
             document.getElementById('dropdown-menu').classList.add('show');
             dropdown = !dropdown;
 
-
         } else {
             document.getElementById("dropdownMenuLink").setAttribute("aria-expanded", false);
             document.getElementById('dropdownClass').classList.remove('show');
@@ -118,29 +119,26 @@
             dropdown = !dropdown;
 
         }
-
-
     }
 
     document.getElementById('dropdownMenuLink').addEventListener('click',function () {
         updown();
+
     });
 
     document.addEventListener('click', function(e) {
         e = e || window.event;
         var target = e.target || e.srcElement;
             elementClass=target.classList[0];
-        console.log(elementClass)
-            if ((elementClass != 'dropdown-item' || elementClass != 'dropdown-toggle') && dropdown)
+            if ((elementClass != 'dropdown-item' || elementClass != 'dropdown-toggle' || elementClass != 'dropdownMenuLink') && dropdown)
             {
                 document.getElementById("dropdownMenuLink").setAttribute("aria-expanded", false);
                 document.getElementById('dropdownClass').classList.remove('show');
                 document.getElementById('dropdown-menu').classList.remove('show');
-                dropdown = !dropdown;
+                //dropdown = false;
             }
-        console.log(dropdown)
 
-    }, false);
+    }, true);
 
 
     if(window.location.href.indexOf('help-us') > -1)
