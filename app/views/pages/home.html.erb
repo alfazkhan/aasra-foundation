@@ -10,6 +10,7 @@
                 <%if @images.first%>
                   <div>
                     <%= image_tag(@images[0].image, class: 'd-block w-100 slideshow-image', alt:'No Image') %>
+                    
                     <div class="text-center slideshow-title">
                       <%= @images[0].title %>
                     </div>

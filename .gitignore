@@ -31,3 +31,13 @@ config/deploy\.rb___jb_tmp___
 *.rb___jb_tmp___
 
 \.idea/
+
+public/system/slideshows/images/000/000/003/medium/
+
+public/system/slideshows/images/000/000/003/original/ubuntu_logo-wallpaper-2560x1440.jpg
+
+public/system/slideshows/images/000/000/003/original/
+
+public/system/slideshows/images/000/000/003/thumb/
+
+app/controllers/slideshows_controller.rb
