@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
 
     def project
-        @projects = Project.all
+        @projects = Project.order(:id).page params[:page]
     end
 
     def volunteer

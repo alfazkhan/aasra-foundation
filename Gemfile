@@ -10,8 +10,7 @@ gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 gem 'sitemap_generator'
 gem 'turnout'
-gem 'liquid'
-gem 'listen', '>= 3.0.5', '< 3.2'
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -7,7 +7,15 @@
 
 
 <h2 class="h1-responsive font-weight-bold text-center my-5">Our Projects</h2>
-
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"> <%= paginate @projects %> </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
 
 <div class="container">
 
@@ -49,7 +57,7 @@
                 <div class="modal-body">
                   <div class="container">
                     <!-- <p>Some text in the modal.</p> -->
-                    <%= image_tag @projects[i+j].image.variant(resize: "768x432"), class: ' img-fluid', style:'border-radius: 1em !important; padding-bottom : 10px;' %>
+                    <%= image_tag @projects[i+j].image, class: ' img-fluid', style:'border-radius: 1em !important; padding-bottom : 10px;' %>
 
                     <hr>
                     <div class="col font-weight-bold" style="font-size: 15px"> <p><%= @projects[i+j].description %></p> </div>
