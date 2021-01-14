@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-gem 'rails_admin', '~> 2.0.0.beta'
+gem 'rails_admin', '~> 2.0.2'
 gem 'devise'
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
